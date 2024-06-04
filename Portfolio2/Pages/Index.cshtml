@@ -1,0 +1,273 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Jose Carlos Garcia";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/index.css">
+</head>
+<body>
+    <div class="container-fluid">
+
+        <div class="hero-container">
+            <div class="hero-slide">
+                <img src="~/resources/index/hero/slide1.jpg" alt="Slide 1">
+            </div>
+            <div class="hero-slide">
+                <img src="~/resources/index/hero/slide2.jpg" alt="Slide 2">
+            </div>
+            <div class="hero-slide">
+                <img src="~/resources/index/hero/slide3.jpg" alt="Slide 3">
+            </div>
+            <!-- Add more slides as needed -->
+            <!-- Updated arrow positions -->
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+            <!-- Dots container -->
+            <div class="dots-container">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <!-- Add more dots as needed -->
+            </div>
+        </div>
+
+
+        <!-- Unified Container for Languages and Frameworks -->
+        <div class="skills-frameworks-container">
+            <div class="outer-container">
+                <div class="toggle-switch">
+                    <input type="checkbox" id="toggle-switch">
+                    <label for="toggle-switch" class="switch-label"></label>
+                </div>
+                <div class="text-container">
+                    <h2 id="main-text">Languages</h2>
+                    <p id="sub-text">Here are a few languages that I have experience with:</p>
+                </div>
+                <div class="inner-container">
+                    <div class="skills-slider" id="languages-logos">
+                        <div class="skill-slide">
+                            <img src="~/resources/index/lang/CPlusPlus.svg" alt="Logo 1">
+                        </div>
+                        <div class="skill-slide">
+                            <img src="~/resources/index/lang/CSharp.svg" alt="Logo 2">
+                        </div>
+                        <div class="skill-slide">
+                            <img src="~/resources/index/lang/Java.svg" alt="Logo 3">
+                        </div>
+                        <div class="skill-slide">
+                            <img src="~/resources/index/lang/JS.svg" alt="Logo 4">
+                        </div>
+                        <div class="skill-slide">
+                            <img src="~/resources/index/lang/MatLab.svg" alt="Logo 5">
+                        </div>
+                        <div class="skill-slide">
+                            <img src="~/resources/index/lang/Python.svg" alt="Logo 6">
+                        </div>
+                        <div class="skill-slide">
+                            <img src="~/resources/index/lang/Ruby.svg" alt="Logo 7">
+                        </div>
+                    </div>
+                    <div class="skills-slider" id="frameworks-logos" style="display: none;">
+                        <div class="tech-slide">
+                            <img src="~/resources/index/tech/Anaconda.svg" alt="Logo">
+                        </div>
+                        <div class="tech-slide">
+                            <img src="~/resources/index/tech/Android Studio.svg" alt="Logo">
+                        </div>
+                        <div class="tech-slide">
+                            <img src="~/resources/index/tech/Atom.svg" alt="Logo">
+                        </div>
+                        <div class="tech-slide">
+                            <img src="~/resources/index/tech/AWS.svg" alt="Logo">
+                        </div>
+                        <div class="tech-slide">
+                            <img src="~/resources/index/tech/Azure.svg" alt="Logo">
+                        </div>
+                        <div class="tech-slide">
+                            <img src="~/resources/index/tech/Confluence.svg" alt="Logo">
+                        </div>
+                        <div class="tech-slide">
+                            <img src="~/resources/index/tech/Dart.svg" alt="Logo">
+                        </div>
+                        <div class="tech-slide">
+                            <img src="~/resources/index/tech/Django REST.svg" alt="Logo">
+                        </div>
+                        <div class="tech-slide">
+                            <img src="~/resources/index/tech/Django.svg" alt="Logo">
+                        </div>
+                        <div class="tech-slide">
+                            <img src="~/resources/index/tech/Docker.svg" alt="Logo">
+                        </div>
+                        <div class="tech-slide">
+                            <img src="~/resources/index/tech/Eclipse IDE.svg" alt="Logo">
+                        </div>
+                        <div class="tech-slide">
+                            <img src="~/resources/index/tech/Electron.svg" alt="Logo">
+                        </div>
+                        <div class="tech-slide">
+                            <img src="~/resources/index/tech/Embedded C.svg" alt="Logo">
+                        </div>
+                        <div class="tech-slide">
+                            <img src="~/resources/index/tech/Figma.svg" alt="Logo">
+                        </div>
+                        <div class="tech-slide">
+                            <img src="~/resources/index/tech/Firebase.svg" alt="Logo">
+                        </div>
+                        <div class="tech-slide">
+                            <img src="~/resources/index/tech/Git.svg" alt="Logo">
+                        </div>
+                        <div class="tech-slide">
+                            <img src="~/resources/index/tech/GitHub.svg" alt="Logo">
+                        </div>
+                        <div class="tech-slide">
+                            <img src="~/resources/index/tech/GitLab.svg" alt="Logo">
+                        </div>
+                        <div class="tech-slide">
+                            <img src="~/resources/index/tech/IntelliJ IDEA.svg" alt="Logo">
+                        </div>
+                        <div class="tech-slide">
+                            <img src="~/resources/index/tech/Jekyll.svg" alt="Logo">
+                        </div>
+                        <div class="tech-slide">
+                            <img src="~/resources/index/tech/Jira.svg" alt="Logo">
+                        </div>
+                        <div class="tech-slide">
+                            <img src="~/resources/index/tech/JUnit.svg" alt="Logo">
+                        </div>
+                        <div class="tech-slide">
+                            <img src="~/resources/index/tech/LaTeX.svg" alt="Logo">
+                        </div>
+                        <div class="tech-slide">
+                            <img src="~/resources/index/tech/Linux.svg" alt="Logo">
+                        </div>
+                        <div class="tech-slide">
+                            <img src="~/resources/index/tech/MySQL.svg" alt="Logo">
+                        </div>
+                        <div class="tech-slide">
+                            <img src="~/resources/index/tech/NET core.svg" alt="Logo">
+                        </div>
+                        <div class="tech-slide">
+                            <img src="~/resources/index/tech/NGINX.svg" alt="Logo">
+                        </div>
+                        <div class="tech-slide">
+                            <img src="~/resources/index/tech/Postman.svg" alt="Logo">
+                        </div>
+                        <div class="tech-slide">
+                            <img src="~/resources/index/tech/Powershell.svg" alt="Logo">
+                        </div>
+                        <div class="tech-slide">
+                            <img src="~/resources/index/tech/Raspberry Pi.svg" alt="Logo">
+                        </div>
+                        <div class="tech-slide">
+                            <img src="~/resources/index/tech/Trello.svg" alt="Logo">
+                        </div>
+                        <div class="tech-slide">
+                            <img src="~/resources/index/tech/Ubuntu.svg" alt="Logo">
+                        </div>
+                        <div class="tech-slide">
+                            <img src="~/resources/index/tech/Visual Studio Code (VS Code).svg" alt="Logo">
+                        </div>
+                        <div class="tech-slide">
+                            <img src="~/resources/index/tech/Windows 11.svg" alt="Logo">
+                        </div>
+                        <!-- Add more logos as needed -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Projects Showcase Section -->
+        <div class="projects-showcase outer-container">
+            <div class="text-container">
+                <h2>Project Showcase</h2>
+                <p>Here are a few of my favorite projects throughout my short career. </p>
+            </div>
+            <div class="inner-container">
+                <div class="project-card">
+                    <img src="~/resources/index/projects/project1.jpg" alt="Project 1">
+                    <h3>Project Title 1</h3>
+                    <p>Short description of the project.</p>
+                </div>
+                <div class="project-card">
+                    <img src="~/resources/index/projects/project2.jpg" alt="Project 2">
+                    <h3>Project Title 2</h3>
+                    <p>Short description of the project.</p>
+                </div>
+                <div class="project-card">
+                    <img src="~/resources/index/projects/project3.jpg" alt="Project 3">
+                    <h3>Project Title 3</h3>
+                    <p>Short description of the project.</p>
+                </div>
+                <div class="project-card">
+                    <img src="~/resources/index/projects/project4.jpg" alt="Project 4">
+                    <h3>Project Title 4</h3>
+                    <p>Short description of the project.</p>
+                </div>
+                <div class="project-card">
+                    <img src="~/resources/index/projects/project5.jpg" alt="Project 5">
+                    <h3>Project Title 5</h3>
+                    <p>Short description of the project.</p>
+                </div>
+                <div class="project-card">
+                    <img src="~/resources/index/projects/project6.jpg" alt="Project 6">
+                    <h3>Project Title 6</h3>
+                    <p>Short description of the project.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="contact-me-section outer-container">
+            <div class="text-container">
+                <h2>Contact Me</h2>
+                <p>Find me to be a solid fit for your cluster?<p>
+            </div>
+            <div class="inner-container">
+                <!-- Contact Form -->
+                <div class="contact-form">
+                    <form action="#" method="post">
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+                <!-- Contact Information -->
+                <div class="contact-info">
+                    <h4>Contact Information</h4>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> carlos.cg895@live.com</li>
+                        <li><i class="fas fa-phone"></i> +1 (806) 673 - 4078</li>
+                        <li><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/garcii">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="night-mode-switch">
+            <input type="checkbox" id="night-mode-toggle">
+            <label for="night-mode-toggle"></label>
+        </div>
+
+     </div>
+
+
+    <script src="~/js/index.js"></script>
+</body>
+</html>

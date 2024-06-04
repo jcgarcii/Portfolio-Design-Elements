@@ -1,0 +1,439 @@
+﻿/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4; /* Light grey background for the body */
+    color: #333; /* Dark text color for better readability */
+}
+
+    /* Night Mode Styles */
+    body.night-mode {
+        background-color: #222;
+        color: #fff;
+    }
+
+/* Add more styles for night mode as needed */
+
+
+.text-center {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Hero Section */
+.hero-container {
+    position: relative;
+    width: 90vw;
+    height: 50vh;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #222; /* Dark background for contrast */
+}
+
+.hero-slide {
+    display: none;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+    .hero-slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 25px;
+    }
+
+    .hero-slide.active {
+        display: block;
+    }
+
+/* Update the arrow styles */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 24px; /* Increase font size for a more modern look */
+    transition: background-color 0.6s ease;
+    user-select: none;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.next {
+    right: 0;
+}
+
+.prev {
+    left: 0; /* Position the previous arrow to the left */
+}
+
+    /* Add hover effect */
+    .prev:hover, .next:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+
+.dots-container {
+    text-align: center;
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+}
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+    .dot.active, .dot:hover {
+        background-color: #717171;
+    }
+
+/* Unified Skills and Frameworks Section */
+.skills-frameworks-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+    width: 90vw;
+    max-width: 1200px;
+}
+
+    .skills-frameworks-container h2 {
+        font-size: 2rem;
+        color: #004080;
+        margin-bottom: 10px;
+    }
+
+    .skills-frameworks-container p {
+        font-size: 1rem;
+        color: #555;
+    }
+
+
+.outer-container {
+    background-color: #f0f0f0;
+    border-radius: 25px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.inner-container {
+    background-color: #ffffff;
+    border-radius: 25px;
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    margin-bottom: 20px;
+}
+
+    .toggle-switch input {
+        display: none;
+    }
+
+.switch-label {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+    .switch-label:before {
+        position: absolute;
+        content: "";
+        height: 26px;
+        width: 26px;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        transition: .4s;
+        border-radius: 50%;
+    }
+
+input:checked + .switch-label {
+    background-color: #2196F3;
+}
+
+    input:checked + .switch-label:before {
+        transform: translateX(26px);
+    }
+
+.skills-frameworks-container .text-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.skills-slider, .tech-slider {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.skill-slide, .tech-slide {
+    margin: 10px;
+    transition: transform 0.3s ease;
+}
+
+    .skill-slide img, .tech-slide img {
+        width: 50px;
+        height: 50px;
+        object-fit: contain;
+        border-radius: 8px;
+        transition: filter 0.3s ease, transform 0.3s ease;
+    }
+
+    .skill-slide:hover img, .tech-slide:hover img {
+        filter: grayscale(0%);
+        transform: scale(1.2);
+    }
+
+/* Projects Showcase Section */
+.projects-showcase {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 40px auto; /* Center the parent container */
+    padding: 20px;
+    border-radius: 15px;
+    background-color: #e9ecef; /* Light background color */
+    width: 90vw;
+    max-width: 1200px; /* Define width and max-width */
+}
+
+    .projects-showcase .text-container {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .projects-showcase h2 {
+        font-size: 2rem;
+        color: #007bff; /* Blue color for heading */
+        margin-bottom: 10px;
+    }
+
+    .projects-showcase p {
+        font-size: 1rem;
+        color: #555;
+    }
+
+    .projects-showcase .inner-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center; /* Center the content inside */
+        width: 100%;
+    }
+
+/* Project Cards */
+.project-card {
+    flex: 1 1 calc(33.333% - 20px); /* 3 cards per row */
+    margin: 10px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+    .project-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .project-card img {
+        width: 100%;
+        border-radius: 10px;
+        margin-bottom: 15px;
+    }
+
+    .project-card h3 {
+        font-size: 1.5rem;
+        color: #333; /* Dark color for headings */
+        margin-bottom: 10px;
+    }
+
+    .project-card p {
+        font-size: 1rem;
+        color: #777; /* Grey color for text */
+    }
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .project-card {
+        flex: 1 1 calc(50% - 20px); /* 2 cards per row */
+    }
+}
+
+@media (max-width: 480px) {
+    .project-card {
+        flex: 1 1 100%; /* 1 card per row */
+    }
+}
+
+/* Contact Me Section */
+.contact-me-section {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 40px auto; /* Center the parent container */
+    padding: 20px;
+    border-radius: 15px;
+    background-color: #e9ecef; /* Light grey background */
+    width: 90vw;
+    max-width: 1200px; /* Define width and max-width */
+}
+
+    .contact-me-section .text-container {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .contact-me-section h2 {
+        font-size: 2rem;
+        color: #17a2b8; /* Blue color for heading */
+        margin-bottom: 10px;
+    }
+
+    .contact-me-section p {
+        font-size: 1rem;
+        color: #555;
+    }
+
+    .contact-me-section .inner-container {
+        display: flex;
+        max-width: 800px;
+        margin: 0 auto; /* Center the inner container */
+        width: 100%;
+        justify-content: center; /* Center the content inside */
+    }
+
+    .contact-me-section .contact-form {
+        flex: 1;
+        margin-right: 20px;
+    }
+
+    .contact-me-section .contact-info {
+        flex: 1;
+    }
+
+        .contact-me-section .contact-info h4 {
+            font-size: 1.2rem;
+            color: #333; /* Dark color for text */
+            margin-bottom: 10px;
+        }
+
+        .contact-me-section .contact-info ul {
+            list-style: none;
+            padding: 0;
+        }
+
+            .contact-me-section .contact-info ul li {
+                font-size: 1rem;
+                color: #333; /* Dark color for text */
+                margin-bottom: 10px;
+            }
+
+                .contact-me-section .contact-info ul li i {
+                    margin-right: 5px;
+                    color: #007bff; /* Blue color for icons */
+                }
+
+    .contact-me-section .contact-form input,
+    .contact-me-section .contact-form textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ced4da;
+        border-radius: 5px;
+        font-size: 1rem;
+    }
+
+    .contact-me-section .contact-form button {
+        background-color: #007bff; /* Blue button */
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        font-size: 1rem;
+        cursor: pointer;
+    }
+
+        .contact-me-section .contact-form button:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+        }
+
+/* Night Mode Switch */
+.night-mode-switch {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+    .night-mode-switch input[type="checkbox"] {
+        display: none;
+    }
+
+    .night-mode-switch label {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        background-color: #ddd;
+        border-radius: 50%;
+        position: relative;
+        cursor: pointer;
+    }
+
+        .night-mode-switch label:after {
+            content: '';
+            width: 20px;
+            height: 20px;
+            background-color: #fff;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: transform 0.3s ease;
+        }
+
+    .night-mode-switch input[type="checkbox"]:checked + label {
+        background-color: #333;
+    }
+
+        .night-mode-switch input[type="checkbox"]:checked + label:after {
+            transform: translate(-50%, -50%) translateX(20px);
+        }
