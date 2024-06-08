@@ -1,52 +1,84 @@
-﻿// Hero Slider
-let slideIndex = 1;
-showSlides(slideIndex);
+﻿document.addEventListener("DOMContentLoaded", function () {
+    // Hero Slider
+    let slideIndex = 1;
+    let slideInterval;
 
-function plusSlides(n) {
-    showSlides(slideIndex += n);
-}
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
 
-function currentSlide(n) {
-    showSlides(slideIndex = n);
-}
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
 
-function showSlides(n) {
-    let i;
-    let slides = document.getElementsByClassName("hero-slide");
+    function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("hero-slide");
+        let dots = document.getElementsByClassName("dot");
+        if (n > slides.length) { slideIndex = 1 }
+        if (n < 1) { slideIndex = slides.length }
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+    }
+
+    showSlides(slideIndex);
+
+    slideInterval = setInterval(function () {
+        plusSlides(1);
+    }, 4000);
+
+    document.querySelector(".prev").addEventListener("click", function () {
+        clearInterval(slideInterval);
+        plusSlides(-1);
+        slideInterval = setInterval(function () {
+            plusSlides(1);
+        }, 4000);
+    });
+
+    document.querySelector(".next").addEventListener("click", function () {
+        clearInterval(slideInterval);
+        plusSlides(1);
+        slideInterval = setInterval(function () {
+            plusSlides(1);
+        }, 4000);
+    });
+
     let dots = document.getElementsByClassName("dot");
-    if (n > slides.length) { slideIndex = 1 }
-    if (n < 1) { slideIndex = slides.length }
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
+    for (let i = 0; i < dots.length; i++) {
+        dots[i].addEventListener("click", function () {
+            clearInterval(slideInterval);
+            currentSlide(i + 1);
+            slideInterval = setInterval(function () {
+                plusSlides(1);
+            }, 4000);
+        });
     }
-    for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
-    }
-    slides[slideIndex - 1].style.display = "block";
-    dots[slideIndex - 1].className += " active";
-}
-document.addEventListener("DOMContentLoaded", function () {
+
+    // Skills Section Animation
     const skillSlides = document.querySelectorAll(".skill-slide");
 
-    // Initial animation when page loads
     skillSlides.forEach((slide, index) => {
-        slide.style.transitionDelay = `${index * 100}ms`; // Delay animation for each slide
+        slide.style.transitionDelay = `${index * 100}ms`;
         slide.style.opacity = 1;
         slide.style.transform = "translateY(0)";
     });
 
-    // Dance effect animation
-    const delay = skillSlides.length * 100; // Total animation duration
+    const delay = skillSlides.length * 100;
     skillSlides.forEach((slide, index) => {
         setTimeout(() => {
-            slide.style.transform = "translateY(-20px)"; // Move up
+            slide.style.transform = "translateY(-20px)";
             setTimeout(() => {
-                slide.style.transform = "translateY(0)"; // Move back down
-            }, 500); // Adjust this value for the dance speed
-        }, index * 100); // Delay each dance step
+                slide.style.transform = "translateY(0)";
+            }, 500);
+        }, index * 100);
     });
 
-    // Hover effect to enlarge the logo
     skillSlides.forEach(slide => {
         slide.addEventListener("mouseover", function () {
             this.style.transform = "scale(1.2)";
@@ -57,52 +89,33 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
+    // Night Mode Toggle
+    const nightModeToggle = document.getElementById('night-mode-toggle');
 
-});
-document.addEventListener("DOMContentLoaded", function () {
-    const toggleSwitch = document.getElementById("toggle-switch");
-    const languagesLogos = document.getElementById("languages-logos");
-    const frameworksLogos = document.getElementById("frameworks-logos");
-    const mainText = document.getElementById("main-text");
-    const subText = document.getElementById("sub-text");
-
-    function switchToLanguages() {
-        mainText.innerText = "Languages";
-        subText.innerText = "Here are a few languages that I have experience with; \n As I continue to learn paradigms, I look to continue to add to this collection. Functional programming languages + other lower-level langauges come to mind.";
-        languagesLogos.style.display = "flex";
-        frameworksLogos.style.display = "none";
-    }
-
-    function switchToFrameworks() {
-        mainText.innerText = "Technologies/Frameworks";
-        subText.innerText = "Does your organization use any of these? We may be a good match! \n I have used the following (and more I may not be including) in extensive projects in both my academic and professional careers:";
-        languagesLogos.style.display = "none";
-        frameworksLogos.style.display = "flex";
-    }
-
-    toggleSwitch.addEventListener("change", function () {
+    nightModeToggle.addEventListener('change', function () {
         if (this.checked) {
-            switchToFrameworks();
+            document.body.classList.add('night-mode');
         } else {
-            switchToLanguages();
+            document.body.classList.remove('night-mode');
         }
     });
 
-    // Initial load
-    switchToLanguages();
-});
+    // Scroll Animations using Intersection Observer
+    const observerOptions = {
+        threshold: 0.1
+    };
 
-// Select the night mode switch input element
-const nightModeToggle = document.getElementById('night-mode-toggle');
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('bounce-in');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
 
-// Listen for change event on the night mode switch
-nightModeToggle.addEventListener('change', function () {
-    // Check if the switch is checked (night mode activated)
-    if (this.checked) {
-        // Apply dark mode styles
-        document.body.classList.add('night-mode');
-    } else {
-        // Remove dark mode styles
-        document.body.classList.remove('night-mode');
-    }
+    const animatedElements = document.querySelectorAll('.animate');
+    animatedElements.forEach(element => {
+        observer.observe(element);
+    });
 });
