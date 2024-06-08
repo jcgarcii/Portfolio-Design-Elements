@@ -16,6 +16,44 @@ body {
     margin-bottom: 20px;
 }
 
+.main-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center the content horizontally */
+}
+
+    .main-container .profile-container {
+        flex: 1; /* Take up 50% of the available space */
+        max-width: 15%; /* Ensure it doesn't exceed 50% of the screen */
+        position: fixed;
+        left: 0; /* Or right: 0; if the tab is on the right side */
+        top: 20%;
+        transform: translateY(-50%);
+        padding: 20px;
+        background-color: #e9ecef; /* Light background color */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 25px; /* Rounded corners */
+        overflow: hidden; /* To ensure content fits within rounded corners */
+    }
+    .main-container .content-container {
+        flex: 1; /* Take up 50% of the available space */
+        max-width: 85%; /* Ensure it doesn't exceed 50% of the screen */
+        /* Add other styles */
+    }
+
+    @media (max-width: 768px) {
+        .main-container{
+
+        }
+            .main-container .profile-container {
+                display: none; /* Hide profile-container */
+            }
+
+            .main-container .content-container {
+                max-width: 100%; /* Set content-container max-width to 100% */
+            }
+    }
+
 /* Hero Section */
 .hero-container {
     position: relative;
