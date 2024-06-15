@@ -16,6 +16,7 @@ body {
     margin-bottom: 20px;
 }
 
+
 .main-container {
     display: flex;
     flex-wrap: wrap;
@@ -23,23 +24,161 @@ body {
 }
 
     .main-container .profile-container {
-        flex: 1; /* Take up 50% of the available space */
-        max-width: 15%; /* Ensure it doesn't exceed 50% of the screen */
         position: fixed;
         left: 0; /* Or right: 0; if the tab is on the right side */
-        top: 20%;
-        transform: translateY(-50%);
         padding: 20px;
         background-color: #e9ecef; /* Light background color */
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         border-radius: 25px; /* Rounded corners */
         overflow: hidden; /* To ensure content fits within rounded corners */
+        transition: width 0.3s ease;
     }
-    .main-container .content-container {
-        flex: 1; /* Take up 50% of the available space */
-        max-width: 85%; /* Ensure it doesn't exceed 50% of the screen */
-        /* Add other styles */
-    }
+
+        /* Profile Bar Styles */
+        .main-container .profile-container .profile-bar {
+            display: flex;
+            flex-direction: column; /* Display items in a column */
+            align-items: center;
+            text-align: center;
+            background-color: #ffffff;
+            border-radius: 25px;
+            padding: 20px;
+            margin-top: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center; /* Center the content inside */
+            width: 100%;
+        }
+
+            /* Profile Picture Styles */
+            .main-container .profile-container .profile-bar .profile-picture {
+                width: 180px; /* Adjust size as needed */
+                height: 180px; /* Adjust size as needed */
+                border-radius: 50%; /* Rounded shape */
+                overflow: hidden;
+                margin-right: 15px;
+                border: 3px solid #fff; /* Add a border with white color */
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+            }
+
+                .main-container .profile-container .profile-bar .profile-picture img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    border-radius: 50%; /* Apply border-radius to the image */
+                }
+
+            /* Text Container Styles */
+            .main-container .profile-container .profile-bar .text-container {
+                flex: 1;
+            }
+
+                .main-container .profile-container .profile-bar .text-container h2 {
+                    font-size: 1.8rem;
+                    color: #E76B2F;
+                    margin-bottom: 5px;
+                }
+
+                .main-container .profile-container .profile-bar .text-container p {
+                    font-size: 1rem;
+                    color: #555;
+                    margin-bottom: 10px;
+                }
+
+            /* Social Handles Styles */
+            .main-container .profile-container .profile-bar .social-handles {
+                margin-bottom: 10px;
+            }
+
+            .main-container .profile-container .profile-bar .social-link {
+                color: #007bff;
+                font-size: 1.5rem;
+                margin-right: 10px;
+                transition: color 0.3s ease;
+            }
+
+                .main-container .profile-container .social-link:hover {
+                    color: #0056b3;
+                }
+
+        .main-container .profile-container .degrees {
+            display: flex;
+            flex-direction: column; /* Ensure logos are in a column */
+            background-color: #ffffff;
+            border-radius: 25px;
+            padding: 20px;
+            margin-top: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-wrap: wrap;
+            text-align: center; 
+            justify-content: center; /* Center the content inside */
+            width: 100%;
+        }
+            .main-container .profile-container .degrees h3 {
+                font-size: 1.4rem;
+                color: #EB583C;
+                margin-bottom: 5px;
+            }
+
+                /* University Logos Styles */
+                .main-container .profile-container .degrees .university-logos {
+                    align-items: center; /* Center align logos */
+                    overflow: hidden;
+                    margin-bottom: 10px;
+                }
+
+                    .main-container .profile-container .degrees .university-logos img {
+                        width: 120px;
+                        height: 120px;
+                        padding: 20px; 
+                        object-fit: contain;
+                        margin-bottom: 10px; /* Add spacing between logos */
+                        transition: filter 0.3s ease, transform 0.3s ease;
+                    }
+
+                    .main-container .profile-container .degrees .university-logos:hover img {
+                        transform: scale(1.1);
+                    }
+
+        .main-container .profile-container .employment {
+            display: flex;
+            flex-direction: column;
+            background-color: #ffffff;
+            border-radius: 25px;
+            padding: 20px;
+            margin-top: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            text-align: center; 
+            flex-wrap: wrap;
+            justify-content: center; /* Center the content inside */
+            width: 100%;
+        }
+            .main-container .profile-container .employment h3 {
+                font-size: 1.4rem;
+                color: #ED6130;
+                margin-bottom: 5px;
+            }
+            /* Company Logos Styles */
+            .main-container .profile-container .employment .company-logos {
+                align-items: center; /* Center align logos */
+                overflow: hidden;
+                justify-content: center;
+                margin-bottom: 5px;
+            }
+
+                .main-container .profile-container .employment .company-logos img {
+                    width: 100px;
+                    height: 100px;
+                    object-fit: contain;
+                    margin-bottom: 10px; /* Add spacing between logos */
+                    transition: filter 0.3s ease, transform 0.3s ease;
+                }
+                .main-container .profile-container .employment .company-logos:hover img {
+                    transform: scale(1.1);
+                }
 
     @media (max-width: 768px) {
         .main-container{
@@ -48,74 +187,70 @@ body {
             .main-container .profile-container {
                 display: none; /* Hide profile-container */
             }
-
-            .main-container .content-container {
-                max-width: 100%; /* Set content-container max-width to 100% */
-            }
     }
 
 /* Hero Section */
 .hero-container {
-    position: relative;
+        position: relative;
     width: 90vw;
     height: 50vh;
     max-width: 1200px;
-    margin: 0 auto;
-    overflow: hidden;
-    border-radius: 25px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #222; /* Dark background for contrast */
-}
+        margin: 0 auto;
+        overflow: hidden;
+        border-radius: 25px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #222; /* Dark background for contrast */
+    }
 
 .hero-slide {
-    display: none;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-}
-
-    .hero-slide img {
+        display: none;
         width: 100%;
         height: 100%;
-        object-fit: cover;
-        border-radius: 25px;
+        text-align: center;
     }
+
+    .hero-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 25px;
+        }
 
     .hero-slide.active {
         display: block;
     }
 
-/* Update the arrow styles */
+        /* Update the arrow styles */
 .prev, .next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    padding: 16px;
-    color: white;
-    font-weight: bold;
-    font-size: 24px; /* Increase font size for a more modern look */
-    transition: background-color 0.6s ease;
-    user-select: none;
-    border-radius: 50%;
-    background-color: rgba(0, 0, 0, 0.5);
-}
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            padding: 16px;
+            color: white;
+            font-weight: bold;
+            font-size: 24px; /* Increase font size for a more modern look */
+            transition: background-color 0.6s ease;
+            user-select: none;
+            border-radius: 50%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
 
 .next {
-    right: 0;
-}
+            right: 0;
+        }
 
 .prev {
-    left: 0; /* Position the previous arrow to the left */
-}
+            left: 0; /* Position the previous arrow to the left */
+        }
 
     /* Add hover effect */
     .prev:hover, .next:hover {
-        background-color: rgba(0, 0, 0, 0.8);
-    }
+                background-color: rgba(0, 0, 0, 0.8);
+            }
 
 .dots-container {
     text-align: center;
@@ -125,19 +260,19 @@ body {
 }
 
 .dot {
-    cursor: pointer;
-    height: 15px;
-    width: 15px;
-    margin: 0 2px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: inline-block;
-    transition: background-color 0.6s ease;
-}
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
 
     .dot.active, .dot:hover {
-        background-color: #717171;
-    }
+                background-color: #717171;
+            }
 
 /* Skills Section */
 .skills-container {
@@ -215,7 +350,6 @@ body {
         }
 
         .skills-container .skill-slide:hover img {
-            filter: grayscale(0%);
             transform: scale(1.2);
         }
 

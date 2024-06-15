@@ -3965,23 +3965,24 @@ textarea.form-control-lg {
   position: relative;
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
+  align-items: start;
   justify-content: space-between;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
+  background-color: aqua
 }
-.navbar > .container,
-.navbar > .container-fluid,
-.navbar > .container-sm,
-.navbar > .container-md,
-.navbar > .container-lg,
-.navbar > .container-xl,
-.navbar > .container-xxl {
-  display: flex;
-  flex-wrap: inherit;
-  align-items: center;
-  justify-content: space-between;
-}
+    .navbar > .container,
+    .navbar > .container-fluid,
+    .navbar > .container-sm,
+    .navbar > .container-md,
+    .navbar > .container-lg,
+    .navbar > .container-xl,
+    .navbar > .container-xxl {
+        display: flex;
+        background-color: aqua flex-wrap: inherit;
+        align-items: start;
+        justify-content: space-between;
+    }
 .navbar-brand {
   padding-top: 0.3125rem;
   padding-bottom: 0.3125rem;
